@@ -11,7 +11,7 @@ public class PlaneScript : MonoBehaviour
     public Terrain terrain; 
 
     //These variables control how the plane moves!
-     float forwardSpeed = 15f; // NEW for times Time.deltaTime
+     float forwardSpeed = 30f; // NEW for times Time.deltaTime
     
     float xRotationSpeed = 90f; // NEW for times Time.deltaTime
 
@@ -25,6 +25,7 @@ public class PlaneScript : MonoBehaviour
     void Start()
     {
         startingPosition = transform.position;
+	AdjustCameraToSeeAll(); // suggested by ChatGPT
         
     }
 
@@ -42,7 +43,9 @@ public class PlaneScript : MonoBehaviour
             //Debug.Log(terrainHeight);
             //Debug.Log(transform.position.y);
         if (transform.position.y < terrainHeight){
-            forwardSpeed = 0;
+            Vector3 correctedPosition = transform.position;
+            correctedPosition.y = terrainHeight; // Ensure plane stays above terrain
+            transform.position = correctedPosition;
         }
 
         //Apply the rotation based on the inputs!
@@ -60,11 +63,26 @@ public class PlaneScript : MonoBehaviour
 
         //Position the camera!
         Vector3 cameraPosition = transform.position;
-        cameraPosition += -transform.forward * 10f;
-        cameraPosition += Vector3.up * 8f;  
+        cameraPosition += -transform.forward * 300f;
+        cameraPosition += Vector3.up * 150f;  
         cameraObject.transform.position = cameraPosition;
 
         cameraObject.transform.LookAt(transform.position);
+    }
+void AdjustCameraToSeeAll()
+    {
+        // Get terrain size and position
+        Vector3 terrainSize = terrain.terrainData.size;
+        Vector3 terrainPosition = terrain.transform.position;
+
+        // Adjust the camera to show the entire terrain
+        Vector3 cameraPosition = new Vector3(
+            terrainPosition.x + terrainSize.x / 2,
+            terrainPosition.y + terrainSize.y + 100f,
+            terrainPosition.z - terrainSize.z / 2
+        );
+        
+        cameraObject.transform.position = cameraPosition;
     }
     public void OnTriggerEnter(Collider other)
     {
