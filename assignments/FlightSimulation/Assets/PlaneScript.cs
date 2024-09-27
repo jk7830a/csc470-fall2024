@@ -135,7 +135,7 @@ public class PlaneScript : MonoBehaviour
     
         if (loseMessageText != null) // Check if loseMessageText is not null
         {
-            loseMessageText.text = "You Lose!";
+            scoreText.text = "You Lose!";
         }
     
         Destroy(gameObject);
