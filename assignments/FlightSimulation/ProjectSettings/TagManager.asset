@@ -5,9 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - collectable
-  - obstacle
+  - speed
   - wall
-  - gas
   layers:
   - Default
   - TransparentFX
