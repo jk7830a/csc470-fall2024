@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     CellScript[,] grid;
     float spacing = 1.1f;
 
-    public int score = 0; 
-
     bool[,] blockPattern = new bool[,]  //help from wiki and chat gpt
     {
         { true, true },

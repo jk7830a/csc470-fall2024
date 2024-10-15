@@ -70,17 +70,6 @@ public class CellScript : MonoBehaviour
         }
     }
 
-    void OnMouseOver()
-    {
-        if (Input.GetMouseButtonDown(1)) // Right-click for Force Push
-        {
-            alive = false;
-            isLava = true; 
-            SetColor();
-            StartCoroutine(LavaBurst()); // Optional: trigger lava burst on Force Push
-        }
-    }
-
 
     public void SetColor(){
         if(alive){
