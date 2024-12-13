@@ -627,8 +627,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Level 1: \n\nSoccer Kick Practice "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3d7a8b9c807f57e4aa3faf156fa7cddd, type: 2}
-  m_sharedMaterial: {fileID: -7391809444234630231, guid: 3d7a8b9c807f57e4aa3faf156fa7cddd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 538f603d568a8bd4b9caa1bb376df7d8, type: 2}
+  m_sharedMaterial: {fileID: -4579141405196848361, guid: 538f603d568a8bd4b9caa1bb376df7d8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -652,8 +652,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 127.7
+  m_fontSizeBase: 127.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
